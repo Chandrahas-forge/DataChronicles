@@ -27,8 +27,31 @@ jobs:
       - name: Run npm build
         run: npm run build:prod
 
+      - name: Print current working directory
+        run: pwd
+
+      - name: List current working directory
+        run: ls -la
+
+      - name: List build directory
+        run: ls -la _site
+
+      - name: List hidden files in build directory
+        run: ls -la _site/.*
+
+      - name: Create temp deploy directory
+        run: mkdir -p /tmp/deploy
+
+      - name: Copy build files to temp directory
+        run: |
+          rsync -av --progress _site/ /tmp/deploy
+          rsync -av --progress _site/.* /tmp/deploy
+
+      - name: List temp directory
+        run: ls -la /tmp/deploy
+
       - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./_site
+          publish_dir: /tmp/deploy
