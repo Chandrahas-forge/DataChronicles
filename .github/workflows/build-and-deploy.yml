@@ -39,6 +39,9 @@ jobs:
       - name: List hidden files in build directory
         run: ls -la _site/.*
 
+      - name: Create temp deploy directory
+        run: mkdir -p /tmp/deploy
+
       - name: Copy build files to temp directory
         run: cp -R _site/* _site/.* /tmp/deploy
 
