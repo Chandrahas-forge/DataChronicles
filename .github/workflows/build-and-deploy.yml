@@ -43,9 +43,7 @@ jobs:
         run: mkdir -p /tmp/deploy
 
       - name: Copy build files to temp directory
-        run: |
-          cp -R _site/* /tmp/deploy
-          cp -R _site/.* /tmp/deploy || true
+        run: rsync -av --progress _site/ /tmp/deploy
 
       - name: List temp directory
         run: ls -la /tmp/deploy
