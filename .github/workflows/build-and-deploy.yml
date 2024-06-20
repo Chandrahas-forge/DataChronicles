@@ -39,8 +39,14 @@ jobs:
       - name: List hidden files in build directory
         run: ls -la _site/.*
 
+      - name: Copy build files to temp directory
+        run: cp -R _site/* _site/.* /tmp/deploy
+
+      - name: List temp directory
+        run: ls -la /tmp/deploy
+
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: _site
+          publish_dir: /tmp/deploy
