@@ -11,9 +11,9 @@
       <meta name="description" content="{{description}}"/>
     {% endif %}
     {% block head %}{% endblock %}
-    <link rel="stylesheet" type="text/css" href="{{ globals.baseUrl[NODE_ENV] }}/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ baseUrl }}/static/css/style.css"/>
     {% if prism == true %}
-      <link rel="stylesheet" type="text/css" href="{{ globals.baseUrl[NODE_ENV] }}/static/css/prism-tomorrow.css">
+      <link rel="stylesheet" type="text/css" href="{{ baseUrl }}/static/css/prism-tomorrow.css">
     {% endif %}
   </head>
   <body>

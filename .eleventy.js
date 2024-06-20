@@ -38,6 +38,17 @@ module.exports = function (eleventyConfig) {
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
+  eleventyConfig.addGlobalData("baseUrl", () => {
+    // Check if NODE_ENV is set to 'production'
+    if (process.env.NODE_ENV === 'production') {
+      // If so, return the production URL
+      return '/DataChronicles';
+    } else {
+      // If not, return the development URL
+      return '';
+    }
+  });
+
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
