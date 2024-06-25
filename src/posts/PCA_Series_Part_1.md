@@ -73,8 +73,8 @@ Both methods yield the same result, demonstrating that \( T \) preserves vector 
 
 Animation of the above example to help understand vector addition:
 
-<div class="aspect-w-16 aspect-h-9">
-  <iframe src="https://drive.google.com/file/d/1-GSqTrfapAG1qn3HBEEjW35ai7Ob6WCI/preview" class="w-full h-full" allow="autoplay"></iframe>
+<div class="responsive-video-container">
+  <iframe src="https://drive.google.com/file/d/1-GSqTrfapAG1qn3HBEEjW35ai7Ob6WCI/preview" allow="autoplay" class="responsive-iframe"></iframe>
 </div>
 
 ### Preserving Scalar Multiplication
