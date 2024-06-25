@@ -74,10 +74,7 @@ Both methods yield the same result, demonstrating that \( T \) preserves vector 
 Animation of the above example to help understand vector addition:
 
 <div class="aspect-w-16 aspect-h-9">
-    <video controls class="w-full h-full">
-        <source src="https://drive.google.com/file/d/1-GSqTrfapAG1qn3HBEEjW35ai7Ob6WCI/view?usp=sharing" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+  <iframe src="https://drive.google.com/file/d/1-GSqTrfapAG1qn3HBEEjW35ai7Ob6WCI/preview" class="w-full h-full" allow="autoplay"></iframe>
 </div>
 
 ### Preserving Scalar Multiplication
