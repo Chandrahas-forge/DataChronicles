@@ -83,6 +83,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownLib);
 
   return {
+    pathPrefix: process.env.NODE_ENV === 'production' ? '/DataChronicles/' : '/',
     dir: {
       input: "src",
     },
