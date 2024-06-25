@@ -19,3 +19,6 @@ _tmp/
 # Visual Studio Code
 /.vscode
 .history
+
+# Animation videos
+/src/static/videos/
