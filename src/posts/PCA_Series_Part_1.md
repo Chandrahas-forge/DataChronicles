@@ -4,7 +4,9 @@ description: "Linear transformations are mathematical functions that map vectors
 date: 2024-07-25
 author: Chandrahas Abburi
 tags:
-  - PCA_1
+   - PCA
+   - Linear Algebra
+   - Linear Transformations
 ---
 
 
@@ -22,7 +24,7 @@ Understanding linear transformations is crucial because they allow us to change 
 
 ### Definition of Linear Transformations
 
-A linear transformation \( T \) is a function between two vector spaces that preserves vector addition and scalar multiplication. Formally, for vectors \( \mathbf{u} \) and \( \mathbf{v} \), and scalar \( c \):
+A linear transformation \( $T$ \) is a function between two vector spaces that preserves vector addition and scalar multiplication. Formally, for vectors \( $\mathbf{u}$ \) and \( $\mathbf{v}$ \), and scalar \( $c$ \):
 $$
 T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})
 $$
@@ -36,17 +38,17 @@ Preserving vector addition means that the transformation of the sum of two vecto
 
 #### Example of Vector Addition Preservation
 
-Consider vectors \( \mathbf{u} \) and \( \mathbf{v} \) in 2D space:
+Consider vectors \( $\mathbf{u}$ \) and \( $\mathbf{v}$ \) in 2D space:
 $$
 \mathbf{u} = \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \quad \mathbf{v} = \begin{pmatrix} 4 \\ 1 \end{pmatrix}
 $$
 
-A linear transformation \( T \) represented by the matrix:
+A linear transformation \( $T$ \) represented by the matrix:
 $$
 T = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}
 $$
 
-Applying \( T \) to \( \mathbf{u} \) and \( \mathbf{v} \):
+Applying \( $T$ \) to \( $\mathbf{u}$ \) and \( $\mathbf{v}$ \):
 $$
 T(\mathbf{u}) = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} \begin{pmatrix} 1 \\ 3 \end{pmatrix} = \begin{pmatrix} 5 \\ 7 \end{pmatrix}
 $$
@@ -69,12 +71,12 @@ $$
 T(\mathbf{u}) + T(\mathbf{v}) = \begin{pmatrix} 5 \\ 7 \end{pmatrix} + \begin{pmatrix} 9 \\ 6 \end{pmatrix} = \begin{pmatrix} 14 \\ 13 \end{pmatrix}
 $$
 
-Both methods yield the same result, demonstrating that \( T \) preserves vector addition.
+Both methods yield the same result, demonstrating that \( $T$ \) preserves vector addition.
 
 Animation of the above example to help understand vector addition:
 
 <div class="responsive-video-container">
-  <iframe src="https://drive.google.com/file/d/1-GSqTrfapAG1qn3HBEEjW35ai7Ob6WCI/preview" allow="autoplay" class="responsive-iframe"></iframe>
+   <iframe src="https://drive.google.com/file/d/1-GSqTrfapAG1qn3HBEEjW35ai7Ob6WCI/preview" allow="autoplay" class="responsive-iframe"></iframe>
 </div>
 
 ### Preserving Scalar Multiplication
@@ -83,17 +85,17 @@ Preserving scalar multiplication means that the transformation of a scalar multi
 
 #### Example of Scalar Multiplication Preservation
 
-Consider vector \( \mathbf{u} \) and scalar \( c \):
+Consider vector \( $\mathbf{u}$ \) and scalar \( $c$ \):
 $$
 \mathbf{u} = \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \quad c = 3
 $$
 
-A linear transformation \( T \) represented by the matrix:
+A linear transformation \( $T$ \) represented by the matrix:
 $$
 T = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}
 $$
 
-Applying \( T \) to \( \mathbf{u} \):
+Applying \( $T$ \) to \( $\mathbf{u}$ \):
 $$
 T(\mathbf{u}) = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} \begin{pmatrix} 1 \\ 3 \end{pmatrix} = \begin{pmatrix} 5 \\ 7 \end{pmatrix}
 $$
@@ -113,7 +115,7 @@ $$
 c T(\mathbf{u}) = 3 \begin{pmatrix} 5 \\ 7 \end{pmatrix} = \begin{pmatrix} 15 \\ 21 \end{pmatrix}
 $$
 
-Both methods yield the same result, demonstrating that \( T \) preserves scalar multiplication.
+Both methods yield the same result, demonstrating that \( $T$ \) preserves scalar multiplication.
 
 ## Summary of Part 1
 
