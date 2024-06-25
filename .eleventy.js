@@ -2,6 +2,9 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
+const markdownIt = require("markdown-it");
+const markdownItTexmath = require("markdown-it-texmath");
+const katex = require("katex");
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -35,6 +38,8 @@ module.exports = function (eleventyConfig) {
   // Copy Image Folder to /_site
   eleventyConfig.addPassthroughCopy("./src/static/img");
 
+  // copu video folder to /_site
+  eleventyConfig.addPassthroughCopy("./src/static/videos");
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
@@ -64,8 +69,19 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
-  // Let Eleventy transform HTML files as nunjucks
-  // So that we can use .html instead of .njk
+  // Configure markdown-it with markdown-it-texmath
+  let markdownLib = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true,
+  }).use(markdownItTexmath, {
+    engine: katex,
+    delimiters: 'dollars',
+    katexOptions: { macros: {"\\RR": "\\mathbb{R}"} }
+  });
+
+  eleventyConfig.setLibrary("md", markdownLib);
+
   return {
     dir: {
       input: "src",

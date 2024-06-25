@@ -3,19 +3,42 @@ layout: default
 prism: true
 ---
 
-<div class="container max-w-4xl mt-6  px-6">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <!-- Include KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    <!-- Include KaTeX JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+    <!-- Include KaTeX Auto-render Extension -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ]
+        });
+      });
+    </script>
+</head>
+<body>
+<div class="container max-w-4xl mt-6 px-6">
     <div class="pb-5 mb-5 border-b border-gray-100">
-        <h1 class="font-bold text-5xl">{{title}}</h1>
+        <h1 class="font-bold text-5xl">{{ title }}</h1>
         <p class="text-center text-base leading-6 font-medium text-gray-500">
             <time> {{ date | readableDate }}
                 by
                 <a>{{ author }}</a>
-
             </time>
         </p>
-
     </div>
     <article class="prose lg:prose-xl my-4 mx-auto">
-        {{ content | safe }}</article>
-
+        {{ content | safe }}
+    </article>
 </div>
+</body>
+</html>
