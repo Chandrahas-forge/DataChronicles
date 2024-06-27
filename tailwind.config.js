@@ -1,5 +1,17 @@
 module.exports = {
-  content: ["./**/*.html"],
+  mode: "jit", // Just-In-Time mode
+  content: [
+    './src/**/*.html',
+    './src/**/*.js',
+    './src/**/*.jsx',
+    './src/**/*.md',
+  ],
+  safelist: [
+    'plotly-container',  // Add any classes you want to explicitly safelist
+    'responsive-video-container',
+    'responsive-iframe',
+    'plotly-iframe'
+  ],
   theme: {
     container: {
       center: true,

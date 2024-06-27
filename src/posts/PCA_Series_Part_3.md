@@ -135,7 +135,7 @@ Eigenvectors represent directions in which a linear transformation acts by stret
 
 ## Connecting Eigenvectors to Previous Concepts
 
-Previously, we examined how matrices $A$ transform vectors through various operations, altering their directions and magnitudes. By imposing $Ax = \lambda x $, we introduce a special condition where certain vectors, called eigenvectors, retain their direction (or flip if the eigenvalue $lambda$ is negative), scaled by $lambda$. This reveals invariant subspaces where eigenvectors remain in their span, showcasing directions that the transformation $A$ leaves unchanged. Thus, the eigenvalue equation identifies special vectors that provide simplified and insightful views of the transformation, maintaining proportional scaling rather than altering directions.
+Previously, we examined how matrices $A$ transform vectors through various operations, altering their directions and magnitudes. By imposing $Ax = \lambda x$, we introduce a special condition where certain vectors, called eigenvectors, retain their direction \(or flip if the eigenvalue \($\lambda$\) is negative\), scaled by\($\lambda$\). This reveals invariant subspaces where eigenvectors remain in their span, showcasing directions that the transformation \($A$\) leaves unchanged. Thus, the eigenvalue equation identifies special vectors that provide simplified and insightful views of the transformation, maintaining proportional scaling rather than altering directions.
 
 
 ### Examples
