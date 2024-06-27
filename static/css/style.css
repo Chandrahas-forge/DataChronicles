@@ -1498,6 +1498,24 @@ body pre[class*="language-"] {
   width: 100%;
 }
 
+/* Custom Plotly container */
+
+.plotly-container {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 240 240 / var(--tw-bg-opacity));
+}
+
+.plotly-iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+}
+
 @media (min-width: 1024px) {
   .lg\:prose-xl {
     font-size: 1.25rem;

@@ -40,6 +40,10 @@ module.exports = function (eleventyConfig) {
 
   // copu video folder to /_site
   eleventyConfig.addPassthroughCopy("./src/static/videos");
+
+  // copy posts folder to /_site
+  eleventyConfig.addPassthroughCopy("./src/static/plots");
+
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 

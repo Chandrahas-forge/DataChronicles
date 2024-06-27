@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix Linear Transformation</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #plot {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Matrix Linear Transformation</h1>
+    <div id="plot"></div>
+    <div>
+        <label for="x">X:</label>
+        <input type="number" id="x" name="x">
+        <label for="y">Y:</label>
+        <input type="number" id="y" name="y">
+        <button onclick="addPoint()">Add Point</button>
+    </div>
+    <p>Maximum number of points: 10</p>
+    <button onclick="applyTransformation()">Apply Transformation</button>
+    <button onclick="resetGraph()">Reset</button>
+
+    <script>
+        let points = {
+            x: [],
+            y: [],
+            labels: []
+        };
+
+        const maxPoints = 10;
+        const labelChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        const layout = {
+            title: 'Matrix Transformation of vectors in 2D space<br> |2, 1|<br> |1, 2|',
+            xaxis: {
+                range: [-10, 10],
+                dtick: 1,  // Set gridline spacing to 1
+                showgrid: true,
+                zeroline: true,
+                zerolinewidth: 2,
+                gridcolor: '#bdbdbd',
+                gridwidth: 1
+            },
+            yaxis: {
+                range: [-10, 10],
+                dtick: 1,  // Set gridline spacing to 1
+                showgrid: true,
+                zeroline: true,
+                zerolinewidth: 2,
+                gridcolor: '#bdbdbd',
+                gridwidth: 1
+            },
+            showlegend: false,
+        };
+
+        function plotVectors() {
+            Plotly.newPlot('plot', [{
+                type: 'scatter',
+                mode: 'markers+text',
+                x: points.x,
+                y: points.y,
+                text: points.labels,
+                textposition: 'top center',
+                textfont: {
+                    color: 'green',
+                    size: 12
+                },
+                marker: {size: 8, color: 'red'}
+            }, {
+                type: 'scatter',
+                mode: 'lines',
+                x: [].concat(...points.x.map((x, i) => [0, x, null])),
+                y: [].concat(...points.y.map((y, i) => [0, y, null])),
+                line: {color: 'blue'}
+            }], layout);
+        }
+
+        plotVectors();
+
+        function addPoint() {
+            let x = parseFloat(document.getElementById('x').value);
+            let y = parseFloat(document.getElementById('y').value);
+
+            // Check if the point is within range, not a duplicate, and the maximum number of points has not been reached
+            if (points.x.length < maxPoints) {
+                if (x >= -10 && x <= 10 && y >= -10 && y <= 10) {
+                    if (!points.x.includes(x) || !points.y.includes(y)) {
+                        points.x.push(x);
+                        points.y.push(y);
+                        points.labels.push(labelChars[points.x.length - 1] + ` (${x.toFixed(2)}, ${y.toFixed(2)})`);
+                        plotVectors();
+                    } else {
+                        alert('Point already exists.');
+                    }
+                } else {
+                    alert('Points must be within the range [-10, 10].');
+                }
+            } else {
+                alert('Maximum number of points reached.');
+            }
+        }
+
+        function applyTransformation() {
+            let A = [
+                [2, 1],
+                [1, 2]
+            ];
+
+            let transformedX = [];
+            let transformedY = [];
+            let transformedLabels = [];
+
+            for (let i = 0; i < points.x.length; i++) {
+                let newX = A[0][0] * points.x[i] + A[0][1] * points.y[i];
+                let newY = A[1][0] * points.x[i] + A[1][1] * points.y[i];
+                transformedX.push(newX);
+                transformedY.push(newY);
+                transformedLabels.push(labelChars[i] + ` (${newX.toFixed(2)}, ${newY.toFixed(2)})`);
+            }
+
+            points.x = transformedX;
+            points.y = transformedY;
+            points.labels = transformedLabels;
+
+            plotVectors();
+        }
+
+        function resetGraph() {
+            points.x = [];
+            points.y = [];
+            points.labels = [];
+            plotVectors();
+        }
+    </script>
+</body>
+</html>
