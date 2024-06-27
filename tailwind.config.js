@@ -5,7 +5,13 @@ module.exports = {
       center: true,
     },
     extend: {
-      colors: {},
+      spacing: {
+        'plotly-container': '100%',
+        'plotly-height': '600px',
+      },
+      colors: {
+        'plotly-bg': '#f0f0f0',
+      },
     },
   },
   variants: {},

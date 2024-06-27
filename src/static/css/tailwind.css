@@ -28,3 +28,12 @@ body pre[class*="language-"] {
 .responsive-iframe {
   @apply absolute top-0 left-0 w-full h-full;
 }
+
+/* Custom Plotly container */
+.plotly-container {
+  @apply relative w-full h-plotly-height bg-plotly-bg;
+}
+
+.plotly-iframe {
+  @apply absolute top-0 left-0 w-full h-full;
+}

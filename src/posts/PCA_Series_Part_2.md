@@ -138,10 +138,5 @@ In this blog post, we've explored various types of linear transformations, inclu
 
 Stay tuned for the next part of this series, where we'll delve deeper into the mathematical foundations of PCA and how linear transformations play a critical role.
 
-**Further Reading:**
-- [Linear Algebra and Its Applications by Gilbert Strang](https://www.amazon.com/Linear-Algebra-Its-Applications-4th/dp/0030105676)
-- [Understanding Linear Transformations](https://mathinsight.org/definition/linear_transformation)
-
 ---
 
-This post builds on the previous one, enhancing your understanding of linear transformations through engaging animations.

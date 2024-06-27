@@ -1,7 +1,7 @@
 ---
 title: "PCA Series Part 1: Linear Transformations – Preserving Vector Addition and Scalar Multiplication"
 description: "Linear transformations are mathematical functions that map vectors to vectors while preserving the operations of vector addition and scalar multiplication. They play a fundamental role in linear algebra and are essential for understanding many data analysis techniques, including Principal Component Analysis (PCA)."
-date: 2024-07-25
+date: 2024-06-25
 author: Chandrahas Abburi
 tags:
    - PCA
